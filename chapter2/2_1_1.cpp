@@ -104,6 +104,4 @@ int main()
         cout << "错误" << endl;
     }
     return 0;
-
-    return 0;
 }
