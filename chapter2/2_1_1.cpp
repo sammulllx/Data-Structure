@@ -11,7 +11,7 @@ struct SqList
     int length = 8;
 };
 bool listdelete(SqList &s, int &ele)
-{ 
+{
     if (s.length == 0)
         return false;
     ele = s.a[0];
@@ -30,7 +30,7 @@ bool listdelete(SqList &s, int &ele)
 }
 int main()
 {
-     SqList s;
+    SqList s;
     cout << "原先数组为:" << endl;
     for (int i = 0; i < s.length; i++)
         cout << s.a[i] << " ";
