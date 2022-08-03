@@ -6,8 +6,8 @@
 using namespace std;
 #define Max 50
 struct SqList{
-    int a[Max]={};
-    int length=0;
+    int a[Max]={6,3,5,6,2,6,4,7};
+    int length=8;
 };
 bool listdelete(SqList &s,int &ele)
 {
