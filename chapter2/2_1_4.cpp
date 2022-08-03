@@ -1,4 +1,4 @@
-//删除区间内元素
+//删除两个数值区间内元素
 #include<bits/stdc++.h>
 using namespace std;
 #define Max 50
