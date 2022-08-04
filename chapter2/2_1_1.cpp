@@ -33,7 +33,7 @@ int main()
     SqList s;
     cout << "原先数组为:" << endl;
     for (int i = 0; i < s.length; i++)
-        cout << s.a[i] << " ";
+        cout << s.a[i] <<" ";
     cout << endl;
     int k;
     if (listdelete(s, k))
