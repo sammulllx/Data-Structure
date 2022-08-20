@@ -6,7 +6,7 @@ typedef struct TreeNode{
     struct TreeNode *lchild,*rchild;
     int tag;
 }TreeNode,*Tree;
-void creattree(Tree &t)
+/* void creattree(Tree &t)
 {
     char ch;
     ch=getchar();
@@ -21,8 +21,22 @@ void creattree(Tree &t)
         creattree(t->lchild);
         creattree(t->rchild);
     }
+} */
+void createST(Tree &t){
+    char ch;
+    ch = getchar();
+    if(ch == '#') t=NULL;
+    else{
+        t = (TreeNode *)malloc(sizeof(TreeNode));
+        t->data = ch;
+        t->tag = 0;
+        t->lchild = NULL;
+        t->rchild = NULL;
+        createST(t->lchild);
+        createST(t->rchild);
+    }
 }
-void back(Tree t)
+/* void back(Tree t)
 {
     struct TreeNode *stack[100];
     int top=-1;
@@ -51,13 +65,44 @@ void back(Tree t)
             }
         }
     }
+} */
+void backS(Tree t){
+    TreeNode *stack[100];
+    int top= -1;
+    TreeNode *p =t;
+    while(p||top!=-1){
+        if(p)
+        {
+            ++top;
+            stack[top] = p;
+            p=p->lchild;
+        }
+        else{
+            p = stack[top];
+            if(p->rchild&&p->rchild->tag==0)
+            {
+               
+                p = p->rchild;
+            }
+            else{
+                cout<<stack[top]->data;
+                --top;
+                p->tag =1;
+                p= NULL;
+
+            }
+        }
+    }
+
+
+
 }
 int main()
 {
     Tree t;
-    creattree(t);
-    back(t);
+    createST(t);
+    backS(t);
     return 0;
 }
 //ABDEC
-//ABD##E##C##
+//ABD##E##C##    DEBCA

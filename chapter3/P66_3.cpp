@@ -1,24 +1,32 @@
 //判断序列是否合法
-#include<iostream>
+#include <iostream>
 using namespace std;
-int n;
 bool isok(char s[])
 {
-    int I=0,O=0;
-    for(int i=0;i<n;i++)
+    int I = 0, O = 0;
+    int i = 0;
+    while (s[i] != '\0')
     {
-        if(s[i]=='I') I++;
-        else O++;
-        if(O>I) return false;
+        if (s[i] == 'I')
+            I++;
+        else
+            O++;
+        if (O > I)
+            return false;
+        i++;
     }
-    if(O==I) return true;
-    return false;
+    if (I == O)
+        return true;
+    else
+        return false;
 }
 int main()
 {
-    char s[8]={'I','O','I','I','O','I','O','O'};
-    n=8;
-    if(isok(s)) cout<<"合法"<<endl;
-    else cout<<"不合法"<<endl;
+    char s[9] = {'I', 'I', 'I', 'I', 'O', 'O', 'O', 'O', '\0'};
+    if (isok(s))
+        cout << "合法";
+    else
+        cout << "非法";
+
     return 0;
 }

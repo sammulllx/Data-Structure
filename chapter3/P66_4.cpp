@@ -1,7 +1,7 @@
 //判断链表是否是中心对称的
-#include<iostream>
+#include <iostream>
 using namespace std;
-typedef struct lnode{
+/* typedef struct lnode{
     char data;
     struct lnode *next;
 }lnode,*linklist;
@@ -46,5 +46,23 @@ int main()
     buildlist(L);
     if(isok(L,n)) cout<<"yes"<<endl;
     else cout<<"no"<<endl;
+    return 0;
+} */
+typedef struct lnode
+{
+    char data;
+    struct lnode *next;
+} lnode, *LinkList;
+void buildList(LinkList L)
+{
+}
+bool isok(LinkList L)
+{
+}
+int main()
+{
+    LinkList L;
+    buildList(L);
+
     return 0;
 }
