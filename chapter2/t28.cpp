@@ -23,16 +23,13 @@ void buildlist(LNode *&l, int a[], int n)
 
 void showlist(LNode *L)
 {
-    if (L)
+    LNode *s = L->next;
+    while (s)
     {
-        LNode *s = L->next;
-        while (s)
-        {
-            cout << s->data << " ";
-            s = s->next;
-        }
-        cout << endl;
+        cout << s->data << " ";
+        s = s->next;
     }
+    cout << endl;
 }
 
 void merge(LNode *A, LNode *B, LNode *&C)
@@ -78,8 +75,6 @@ int main()
     merge(A, B, C);
 
     showlist(C);
-    int *p = NULL;
-    printf("%d", (int)p);
 
     return 0;
 }
